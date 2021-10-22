@@ -12,7 +12,7 @@ For license information check the [LICENSE](LICENSE.md)-file.
 
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-apidoc/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-apidoc)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-apidoc/downloads.png)](https://packagist.org/packages/yiisoft/yii2-apidoc)
-[![Build Status](https://github.com/yiisoft/yii2-apidoc/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-apidoc/actions)
+[![Build Status](https://travis-ci.org/yiisoft/yii2-apidoc.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-apidoc)
 
 
 Installation
@@ -40,15 +40,14 @@ Usage
 
 This extension offers two commands:
 
-- `api` to generate class API documentation. [phpDocumentor](https://www.phpdoc.org/) is used as a base framework
-  so refer to its guide for the syntax.
+- `api` to generate class API documentation.
 - `guide` to render nice HTML pages from markdown files such as the yii guide.
 
-Simple usage for stand-alone class documentation:
+Simple usage for stand alone class documentation:
 
     vendor/bin/apidoc api source/directory ./output
 
-Simple usage for stand-alone guide documentation:
+Simple usage for stand alone guide documentation:
 
     vendor/bin/apidoc guide source/docs ./output
 
@@ -59,8 +58,8 @@ You can combine them to generate class API and guide documentation in one place:
     # generate the guide (order is important to allow the guide to link to the apidoc)
     vendor/bin/apidoc guide source/docs ./output
 
-By default, the `bootstrap` template will be used. You can choose a different template with the `--template=name` parameter.
-Currently, there is only the `bootstrap` template available.
+By default the `bootstrap` template will be used. You can choose a different template with the `--template=name` parameter.
+Currently there is only the `bootstrap` template available.
 
 You may also add the `yii\apidoc\commands\ApiController` and `GuideController` to your console application command map
 and run them inside of your applications console app.

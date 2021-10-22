@@ -56,7 +56,7 @@ $this->beginPage();
     $nav = [];
 
     if ($this->context->apiUrl !== null) {
-        $nav[] = ['label' => 'Class reference', 'url' => rtrim($this->context->apiUrl, '/') . '/index.html'];
+        $nav[] = ['label' => '首页', 'url' => rtrim($this->context->apiUrl, '/') . '/index.html'];
         if (!empty($this->context->extensions)) {
             $extItems = [];
             foreach ($this->context->extensions as $ext) {

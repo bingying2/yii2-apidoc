@@ -14,7 +14,7 @@ if (isset($readme)) {
     echo \yii\apidoc\helpers\ApiMarkdown::process($readme);
 }
 ?>
-<h1>Class Reference</h1>
+<h1>接口列表</h1>
 
 <table class="summaryTable docIndex table table-bordered table-striped table-hover">
     <colgroup>
@@ -23,12 +23,13 @@ if (isset($readme)) {
         <col class="col-description" />
     </colgroup>
     <tr>
-        <th>Class</th>
-        <th>Description</th>
+        <th>控制器</th>
+        <th>说明</th>
     </tr>
 <?php
 ksort($types);
 foreach ($types as $i => $class):
+    if($class->shortDescription == '') continue;
 ?>
     <tr>
         <td><?= $renderer->createTypeLink($class, $class, $class->name) ?></td>

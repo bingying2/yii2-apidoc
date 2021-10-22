@@ -1,40 +1,6 @@
 Yii Framework 2 apidoc extension Change Log
 ===========================================
 
-2.1.7 under development
------------------------
-
-- Bug #210: Fixed invalid attempt to scan parent class of interface with `@inheritdoc` tag on a method (bizley)
-
-
-2.1.6 May 05, 2021
-------------------
-
-- Bug #206: Fixed invalid path to `solarized-light.css` in `HighlightBundle` (bu4ak)
-
-
-2.1.5 July 19, 2020
--------------------
-
-- Bug #163: Do not stop on fatal errors during parsing source files (samdark)
-- Bug #198: Add missing initialization of `$contexts` in `ApiMarkdownTrait::parseApiLinks()` (samdark)
-
-
-2.1.4 May 02, 2020
-------------------
-
-- Enh #7, #132: Add support for `@property` and `@method` (samdark)
-
-
-2.1.3 February 12, 2020
------------------------
-
-- Bug #145: Fixed broken API links on property/method docs that were pulled in with @inheritdoc (brandonkelly)
-- Bug #187: Prevent getter/setter methods from affecting class-defined property docs (brandonkelly)
-- Enh #137: @since tags are now propagated to inherited methods/properties in the same package (brandonkelly)
-- Enh #185: Use HTTPS for www.php.net links (kamarton)
-
-
 2.1.2 August 20, 2019
 ---------------------
 

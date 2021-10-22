@@ -16,10 +16,19 @@ $this->beginContent('@yii/apidoc/templates/bootstrap/layouts/main.php', isset($t
 <div class="row">
     <div class="col-md-3">
         <?php
+        if(!function_exists('toUnderScore')){
+            function toUnderScore($str){
+                $dstr = preg_replace_callback('/([A-Z]+)/', function($matchs) {
+                    return '-' . strtolower($matchs[0]);
+                }, $str);
+                return trim(preg_replace('/-{2,}/', '-', $dstr),'-');
+            }
+        }
         $types = $renderer->getNavTypes(isset($type) ? $type : null, $types);
         ksort($types);
         $nav = [];
         foreach ($types as $i => $class) {
+            if(strtolower(StringHelper::basename($class->name)) == 'controller') continue;
             $namespace = $class->namespace;
             if (empty($namespace)) {
                 $namespace = 'Not namespaced classes';
@@ -32,7 +41,7 @@ $this->beginContent('@yii/apidoc/templates/bootstrap/layouts/main.php', isset($t
                 ];
             }
             $nav[$namespace]['items'][] = [
-                'label' => StringHelper::basename($class->name),
+                'label' => substr(StringHelper::basename(str_replace('-controller','',toUnderScore($class->name))),1),
                 'url' => './' . $renderer->generateApiUrl($class->name),
                 'active' => isset($type) && ($class->name == $type->name),
             ];
