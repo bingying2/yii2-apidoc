@@ -56,7 +56,7 @@ ArrayHelper::multisort($methods, 'name');
             list(,,$module,,$controller) = explode("\\",strtolower($method->definedBy));
         }
         ?>
-        <p>接口地址：<?=($module?$module.'/':'').toUnderScore(str_replace('Controller','',$controller)).'/'.$method->name?></p>
+        <p>接口地址：<?=($module?$module.'/':'').toUnderScore(str_replace(['Controller','controller'],'',$controller)).'/'.$method->name?></p>
 
         <?= ApiMarkdown::process($method->description, $type) ?>
 
